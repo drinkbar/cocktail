@@ -35,15 +35,6 @@
 				</form>
 
 				<a href="index.php?seite=anmelden" class="button">Mitglied werden</a>
-			 	<a class="uhrzeit">
-			 		 <div><script type="text/javascript">
-						 var W = new Array('So','Mo','Di','Mi','Do','Fr','Sa','So'),H=new Date(),
-						 E = new Array("Januar","Februar","März","April","Mai","Juni",
-						 "Juli","August","September","Oktober","November","Dezember");
-						 document.write(W[H.getDay()]+"., "+H.getDate()+". "+E[H.getMonth()]+" "+H.getFullYear())
-						 </script> 
-					</div>
-				</a>
 			</div>
 		</div>
 		
