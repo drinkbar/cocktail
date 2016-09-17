@@ -2,7 +2,12 @@
 /************************************************************
  * !!! DO NOT CHANGE FOLLOWING LINES !!!
  ************************************************************/
-/**
+
+// set timezone
+setlocale(LC_TIME, "de_DE");
+date_default_timezone_set('Europe/Berlin');
+
+ /**
  * Creating constants for frequently used paths
  */
  defined("LIBRARY_PATH")
