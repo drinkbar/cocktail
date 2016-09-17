@@ -13,8 +13,13 @@
  
  switch ($page)
  {
- 	case 'impressum':
- 		$view = "impressum.php";
+ 	case 'useragreement':
+ 		$view = "useragreement.php";
+ 		$variables = array();
+ 		break;
+ 	default:
+ 	case 'imprint':
+ 		$view = "imprint.php";
  		$variables = array();
  		break;
  	default:

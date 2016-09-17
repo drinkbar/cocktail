@@ -3,9 +3,9 @@
 			<footer>
 				<nav aria-label="You are here:">
 					<ul class="breadcrumbs">
-						<li><a href="index.php?seite=startseite">&copy; Drinkbar.de</a></li>
-						<li><a href="index.php?seite=index">Impressum</a></li>
-						<li><a href="index.php?seite=nutzungsbedingungen">Nutzungsbedingungen</a></li>
+						<li><a href="index.php">&copy; Drinkbar.de</a></li>
+						<li><a href="index.php?page=imprint">Impressum</a></li>
+						<li><a href="index.php?page=useragreement">Nutzungsbedingungen</a></li>
 					</ul>
 				</nav>
 			</footer>
