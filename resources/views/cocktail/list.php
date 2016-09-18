@@ -2,7 +2,7 @@
 require_once '../src/Db.php';
 
 $db = new Db();
-$list = $db->select("SELECT * FROM cocktail WHERE 1");
+$list = $db->select("SELECT * FROM cocktail WHERE 1 ORDER BY Cocktailname");
 ?>
 <main>
 	<div class="row">
