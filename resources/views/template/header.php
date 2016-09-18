@@ -16,25 +16,25 @@
 	<div class="row">
 		<div class ="large-12 columns">
 			<div class="pc">		
-				<form action="logincheck.php" method="post">
+				<form action="login_check.php" method="post">
    	   		    	<div class="row">
    	   		       		<div class="medium-5 columns">
    	   		         		<label>
-   	   		           			<input type="text" name="login" placeholder="Benutzername">
+   	   		           			<input type="text" name="username" placeholder="Benutzername">
    	   		         		</label>
    	   		       		</div>
    	   		       		<div class="medium-5 columns">
    	   		         		<label>
-   	   		           			<input type="password" name="Passwort" placeholder="Passwort">
+   	   		           			<input type="password" name="password" placeholder="Passwort">
    	   		         		</label>
    	   		       		</div>
 						<div class="medium-2 columns">
-				   			<input type="submit" value="login">
+				   			<input type="submit" name="submit" value="login">
 				   		</div>
    	   		     	</div>
 				</form>
 
-				<a href="index.php?seite=anmelden" class="button">Mitglied werden</a>
+				<a href="index.php?page=registration" class="button">Mitglied werden</a>
 			</div>
 		</div>
 		
