@@ -40,6 +40,10 @@ $zutaten = $db->select("SELECT z.*, cz.Menge
 						 JOIN zutat z ON (z.ID = cz.Zutat_ID) 
 						WHERE c.ID = $id");
 
+$listZutaten = $db->select("SELECT * FROM zutat WHERE 1 ORDER BY Bezeichnung");
+
+
+
 if(!empty($cocktail))
 {
 	$name = $cocktail[0]['Cocktailname'];
@@ -77,12 +81,32 @@ else
 			      </label>
 			    </div>
 			  </div>
+			  <div class="large-12 columns">
+			      <label>Zutaten</label>
+			      <div class="row checkbox-grid">
+				      <?php 
+				      foreach ($listZutaten as $zutat)
+				      {
+				      	$zName = $zutat['Bezeichnung'];
+				      	$zId = $zutat['ID'];
+				      	echo "<div class=\"small-4 columns\">";
+				      	echo "<div class=\"input-group\">
+	        					<span class=\"input-group-label\">
+									<input id=\"chkbox_$zId\" type=\"checkbox\" name=\"ingredients[]\"><label for=\"chkbox_$zId\">$zName</label>
+	        				    </span>
+	        				    <input type=\"text\" placeholder=\"Menge\" class=\"input-group-field\">
+	      					  </div>";
+				      	echo "</div>";
+				      }
+				      ?>
+			      </div>
+			  </div>
+			  <input type="hidden" name="id" value="<?php echo $id; ?>" />
 			  <div class="row">
 			    <div class="large-12 columns">
 			      <input type="submit" name="submit" class="button" value="Speichern" /> 
 			    </div>
 			  </div>
-			  <input type="hidden" name="id" value="<?php echo $id; ?>" />
 		</form>
 	</div>
 </main>
