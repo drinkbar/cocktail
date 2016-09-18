@@ -15,4 +15,14 @@ if(isset($_SESSION['error']))
 {
 	$variables['error'] = $_SESSION['error'];
 	unset($_SESSION['error']);
+}// check warning
+if(isset($_SESSION['warning']))
+{
+	$variables['warning'] = $_SESSION['warning'];
+	unset($_SESSION['warning']);
+}// check success
+if(isset($_SESSION['success']))
+{
+	$variables['success'] = $_SESSION['success'];
+	unset($_SESSION['success']);
 }
