@@ -30,6 +30,14 @@ else
 	<div class="row">
 		<hr />
 		<h5><?php echo $name; ?></h5>
+		<?php 
+		if($_SESSION['user']['role'] == 'admin') 
+		{
+			echo "<div class=\"small-12 columns\">";
+			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\">Bearbeiten</a>";
+			echo "</div>";
+		}
+		?>
 		<div class="small-6 columns">
 			<img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" title="<?php echo $name; ?>" />
 		</div>
