@@ -15,26 +15,19 @@
 <header>
 	<div class="row">
 		<div class ="large-12 columns">
-			<div class="pc">		
-				<form action="login_check.php" method="post">
-   	   		    	<div class="row">
-   	   		       		<div class="medium-5 columns">
-   	   		         		<label>
-   	   		           			<input type="text" name="username" placeholder="Benutzername">
-   	   		         		</label>
-   	   		       		</div>
-   	   		       		<div class="medium-5 columns">
-   	   		         		<label>
-   	   		           			<input type="password" name="password" placeholder="Passwort">
-   	   		         		</label>
-   	   		       		</div>
-						<div class="medium-2 columns">
-				   			<input type="submit" name="submit" value="login">
-				   		</div>
-   	   		     	</div>
-				</form>
-
-				<a href="index.php?page=registration" class="button">Mitglied werden</a>
+			<div class="pc">	
+				<?php 
+					if(isset($_SESSION['login']) && $_SESSION['login'] == 1)
+						echo "<a href=\"logout.php\" class=\"button\">Logout</a>";
+					else 
+						include(TEMPLATE_PATH . "/login_form.html");
+					
+					if(isset($error))
+					{
+						echo "
+  						<div data-alert class=\"callout alert\">$error</div>";
+					}
+					?>	
 			</div>
 		</div>
 		
