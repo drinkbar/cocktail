@@ -24,7 +24,6 @@ class Db {
 		$con = $this->connect();
 		
 		$result = $con->query($query);
-		var_dump($query);
 		return $result;
 	}
 	
