@@ -20,7 +20,7 @@
 					if(isset($_SESSION['login']) && $_SESSION['login'] == 1)
 					{
 						echo "<ul class=\"menu align-right\">
-							  <li><a href=\"logout.php\" class=\"button\">Logout</a></li>
+							  <li><a href=\"security.php?logout\" class=\"button\">Logout</a></li>
 							  <li> </li>
 							  <li>Willkommen $username</li>
 							</ul>";
