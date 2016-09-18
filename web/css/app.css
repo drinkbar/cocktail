@@ -554,5 +554,10 @@ input[type=radio]{
 	margin-bottom: 1rem;
 }
 
+}
 
+.checkbox-grid li {
+    display: block;
+    float: left;
+    width: 25%;
 }
