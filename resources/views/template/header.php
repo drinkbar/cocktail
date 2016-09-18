@@ -18,7 +18,13 @@
 			<div class="pc">	
 				<?php 
 					if(isset($_SESSION['login']) && $_SESSION['login'] == 1)
-						echo "<a href=\"logout.php\" class=\"button\">Logout</a>";
+					{
+						echo "<ul class=\"menu align-right\">
+							  <li><a href=\"logout.php\" class=\"button\">Logout</a></li>
+							  <li> </li>
+							  <li>Willkommen $username</li>
+							</ul>";
+					}
 					else 
 						include(TEMPLATE_PATH . "/login_form.html");
 					
