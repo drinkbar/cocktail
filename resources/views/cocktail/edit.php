@@ -27,7 +27,7 @@ if(isset($_REQUEST['submit']))
 	{
 		$_SESSION['error'] = "Bearbeitung fehlgeschlagen. ".$db->error();
 	}
-	header("Location: cocktail.php?edit=$id");
+	header("Location: cocktail.php?show=$id");
 }
 
 $cocktail = $db->select("SELECT *
