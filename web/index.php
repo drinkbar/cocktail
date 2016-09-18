@@ -17,7 +17,6 @@
  		$view = "useragreement.php";
  		$variables = array();
  		break;
- 	default:
  	case 'imprint':
  		$view = "imprint.php";
  		$variables = array();

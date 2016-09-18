@@ -16,6 +16,10 @@
  	$view = "cocktail/show.php";
  	$variables = array( 'id' => $_REQUEST['show']);
  }
+ elseif(isset($_REQUEST['ranking']))
+ {
+ 	$view = "cocktail/ranking.php";
+ }
 
  // handle session parameter 
  require_once(LIBRARY_PATH . '/session.php');
