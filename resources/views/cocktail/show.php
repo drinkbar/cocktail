@@ -16,7 +16,7 @@ if(!empty($cocktail))
 {
 	$name = $cocktail[0]['Cocktailname'];
 	//$zutaten = $cocktail[0]['Zutaten'];
-	$rezept = $cocktail[0]['Rezept'];
+	$rezept = nl2br($cocktail[0]['Rezept']);
 	$image = $cocktail[0]['Bild'];
 }
 else
