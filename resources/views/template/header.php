@@ -31,7 +31,17 @@
 					if(isset($error))
 					{
 						echo "
-  						<div data-alert class=\"callout alert\">$error</div>";
+						<div data-alert class=\"callout alert\">$error</div>";
+					}
+					if(isset($warning))
+					{
+						echo "
+						<div data-alert class=\"callout warning\">$warning</div>";
+					}
+					if(isset($success))
+					{
+						echo "
+						<div data-alert class=\"callout success\">$success</div>";
 					}
 					?>	
 			</div>

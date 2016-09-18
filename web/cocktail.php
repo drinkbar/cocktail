@@ -16,6 +16,11 @@
  	$view = "cocktail/show.php";
  	$variables = array( 'id' => $_REQUEST['show']);
  }
+ elseif(isset($_REQUEST['edit']))
+ {
+ 	$view = "cocktail/edit.php";
+ 	$variables = array( 'id' => $_REQUEST['edit']);
+ }
  elseif(isset($_REQUEST['ranking']))
  {
  	$view = "cocktail/ranking.php";
