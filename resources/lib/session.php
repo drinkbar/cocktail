@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+if(!isset($variables))
+	$variables = array();
+
 // check user
 if(isset($_SESSION['user']))
 {
