@@ -39,6 +39,10 @@ else
 			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\">Bearbeiten</a>";
 			echo "</div>";
 		}
+		if(isset($_SESSION['user']))
+		{
+			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\"><i class=\"founicon-star\"></i></a>";
+		}
 		?>
 	</div>
 	<div class="row align-middle">

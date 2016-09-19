@@ -7,6 +7,7 @@
   <title>drinkbar.de</title>
   
   <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/foundation-icons.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
 
@@ -54,10 +55,10 @@
 					<ul class="menu">
 						<li><a href="index.php">Home</a></li>
 						<li><a href="cocktail.php">Cocktails</a></li>
-						<li><a href="index.php?seite=zutaten">Zutaten</a></li>
-						<li><a href="cocktail.php?ranking">Bestenliste</a></li>
+						<li><a href="index.php?page=zutaten">Zutaten</a></li>
+						<?php  if(isset($_SESSION['user'])) echo "<li><a href=\"cocktail.php?ranking\">Bestenliste</a></li>";?>
 						<li><a href="index.php?seite=suche">Suche</a></li>
-						<li><a href="index.php?seite=einkaufsliste">Einkaufsliste</a></li>
+						<?php  if(isset($_SESSION['user'])) echo "<li><a href=\"index.php?seite=einkaufsliste\">Einkaufsliste</a></li>"; ?>
 			   		</ul>
 		   		</div>
 	   		</div>
