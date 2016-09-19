@@ -18,6 +18,28 @@ class Db {
 		return self::$connection;
 	}
 	
+	public function startTransaction()
+	{
+		$con = $this->connect();
+		//$con->autocommit(false);
+		//$this->query("BEGIN");
+		$con->begin_transaction(MYSQLI_TRANS_START_READ_WRITE);
+	}
+	
+	public function commit()
+	{
+		$con = $this->connect();
+		return $con->commit();
+		//$con->autocommit(true);
+	}
+	
+	public function rollback()
+	{
+		$con = $this->connect();
+		$con->rollback();
+		//$con->autocommit(true);
+	}
+	
 	public function query($query)
 	{
 		// connect
