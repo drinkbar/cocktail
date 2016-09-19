@@ -13,6 +13,10 @@
  
  switch ($page)
  {
+ 	case 'zutaten':
+ 		$view = "zutaten.php";
+ 		$variables = array();
+ 		break;
  	case 'useragreement':
  		$view = "useragreement.php";
  		$variables = array();
