@@ -17,6 +17,7 @@ if(!empty($cocktail))
 	$name = $cocktail[0]['Cocktailname'];
 	//$zutaten = $cocktail[0]['Zutaten'];
 	$rezept = nl2br($cocktail[0]['Rezept']);
+	$comment = nl2br($cocktail[0]['Bemerkung']);
 	$image = $cocktail[0]['Bild'];
 }
 else
@@ -31,18 +32,20 @@ else
 		<hr />
 		<h5><?php echo $name; ?></h5>
 		<?php 
-		if($_SESSION['user']['role'] == 'admin') 
+		if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') 
 		{
 			echo "<div class=\"small-12 columns\">";
 			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\">Bearbeiten</a>";
 			echo "</div>";
 		}
 		?>
+	</div>
+	<div class="row align-middle">
 		<div class="small-6 columns">
 			<img src="<?php echo $image; ?>" alt="<?php echo $name; ?>" title="<?php echo $name; ?>" />
 		</div>
 		<div class="small-6 columns">
-			<h3>Zutaten</h3>
+			<h4>Zutaten</h4>
 			<ul>
 				<?php 
 				foreach ($zutaten as $zutat)
@@ -52,8 +55,13 @@ else
 					echo "</li>";
 				}?>
 			</ul>		
-			<h3>Rezept</h3>
+			<h4>Zubereitung</h4>
 			<p><?php echo $rezept; ?></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<p><?php echo $comment; ?></p>
 		</div>
 	</div>
 </main>

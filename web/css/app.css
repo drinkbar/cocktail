@@ -60,7 +60,6 @@ h4 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	margin-left: 0rem;
-	margin-top: -1rem;
 	border-radius: 2rem;
 	text-align: center;
 	background-color: #660033 ;
@@ -569,4 +568,10 @@ input[type=radio]{
 
 .checkbox-grid .input-group-label input[type="checkbox"]{
 	margin: 0;
+}
+.menu-centered {
+  margin-top: -4rem;
+}
+.menu a.button{
+	margin-bottom: 1rem;
 }

@@ -13,7 +13,7 @@
 <body>
 
 <header>
-	<div class="row">
+	<div class="row" >
 		<div class ="large-12 columns">
 			<div class="pc">	
 				<?php 
@@ -21,7 +21,7 @@
 					{
 						echo "<ul class=\"menu align-right\">
 							  <li><a href=\"security.php?logout\" class=\"button\">Logout</a></li>
-							  <li> </li>
+							  <li>&nbsp;</li>
 							  <li>Willkommen $username</li>
 							</ul>";
 					}
@@ -62,6 +62,7 @@
 		   		</div>
 	   		</div>
    		</div>
+		<hr />
 	</div> 
 		 
 	<div class="smart">
