@@ -56,7 +56,7 @@
 						<li><a href="index.php">Home</a></li>
 						<li><a href="cocktail.php">Cocktails</a></li>
 						<li><a href="index.php?page=zutaten">Zutaten</a></li>
-						<?php  if(isset($_SESSION['user'])) echo "<li><a href=\"cocktail.php?ranking\">Bestenliste</a></li>";?>
+						<?php  if(isset($_SESSION['user'])) echo "<li><a href=\"favoriten.php\">Favoriten</a></li>";?>
 						<li><a href="index.php?seite=suche">Suche</a></li>
 						<?php  if(isset($_SESSION['user'])) echo "<li><a href=\"index.php?seite=einkaufsliste\">Einkaufsliste</a></li>"; ?>
 			   		</ul>
