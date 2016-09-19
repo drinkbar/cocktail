@@ -1,3 +1,10 @@
+<?php 
+require_once '../src/Db.php';
+// select random cocktail
+$db = new Db();
+$cocktailList = $db->select("SELECT * FROM cocktail WHERE 1");
+$randCocktail = $cocktailList[array_rand($cocktailList, 1)];
+?>
 <main>
 <div class="row">
 	<hr />
@@ -38,59 +45,15 @@
 
 	<div class="large-12 columns" id="zufall">
 		<div class="large-12 columns">
-			<h4>Wie w&auml;re es mit... ?</h4>
+			<h4>Wie wäre es mit... ?</h4>
 			<div class="small-12 large-6 columns">
-				<div class="small-12 large-1 columns">
-					<span class="badge">1</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Schneide die Limette von beiden Seiten an und teile sie in drei
-						Teile.</p>
-				</div>
-				<div class="small-12 large-1 columns">
-					<span class="badge">2</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Gebe die Limettenst&uuml;cke in ein Glas.</p>
-				</div>
-				<div class="small-12 large-1 columns">
-					<span class="badge">3</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>F&uuml;gen den braunen Zucker hinzu.</p>
-				</div>
-				<div class="small-12 large-1 columns">
-					<span class="badge">4</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Zersto&szlig;e die Limette zusammen mit dem braunen Zucker.</p>
-				</div>
-				<div class="small-12 large-1 columns">
-					<span class="badge">5</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Anschlie&szlig;end Cacha&ccedil;a hinzugeben.</p>
-				</div>
-
-				<div class="small-12 large-1 columns">
-					<span class="badge">6</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Gebe das gecrushte Eis hinzu.</p>
-				</div>
-
-				<div class="small-12 large-1 columns">
-					<span class="badge">7</span>
-				</div>
-				<div class="small-12 large-11 columns">
-					<p>Verr&uuml;hre den Glasinhalt gut.</p>
-				</div>
+				<?php echo $randCocktail['Rezept']?>
 			</div>
 
 			<div class="small-12 large-6 columns">
-				<h3>Der Caipirinha</h3>
-				<a href="caipi.html"> <img src="images/cocktails/Caipirinha2.jpg"
-					alt="Caipirinha2">
+				<h3><?php echo $randCocktail['Cocktailname']; ?></h3>
+				<a href="cocktail.php?show=<?php echo $randCocktail['ID']; ?>"> <img src="<?php echo $randCocktail['Bild']?>"
+					alt="<?php echo $randCocktail['Cocktailname']; ?>">
 				</a>
 			</div>
 
