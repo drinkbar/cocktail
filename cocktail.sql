@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Sep 2016 um 10:58
+-- Erstellungszeit: 19. Sep 2016 um 15:07
 -- Server-Version: 5.6.25
 -- PHP-Version: 5.6.11
 
@@ -42,8 +42,7 @@ INSERT INTO `cocktail` (`ID`, `Cocktailname`, `Rezept`, `Bemerkung`, `Bild`) VAL
 (1, 'Caipirinha', '1. Schneide die Limette von beiden Seiten an und teile sie in drei Teile.\r\n2. Gebe die LimettenstÃ¼cke in ein Glas.\r\n3. FÃ¼ge den braunen Zucker hinzu.\r\n4. ZerstoÃŸe die Limette zusammen mit dem braunen Zucker.\r\n5. AnschlieÃŸend CachaÃ§a hinzugeben.\r\n6. Gebe das gecrushte Eis hinzu.\r\n7. VerrÃ¼hre den Glasinhalt gut.', 'Wer im Cocktail mixen noch keine groÃŸen Erfahrungen hat, fÃ¼r den ist Caipirinha ein perfekter Drink. Denn der Caipi gelingt mÃ¼helos, da er nur aus vier Zutaten besteht: Limetten, braunem Rohrzucker, zerstoÃŸenem Eis und CachaÃ§a. \r\nLetztere ist eine brasilianische Spirituose aus vergorenem und anschlieÃŸend gebranntem Zuckerrohrsaft. In Brasilien wird Ã¼brigens feiner, weiÃŸer Rohrzucker statt, wie in Deutschland oft Ã¼blich, brauner Rohrzucker zugefÃ¼gt. \r\n\r\nDamit der Drink nicht bitter wird, entferne die weiÃŸe Haut groÃŸzÃ¼gig von den Limetten. SÃ¤uerlicher wird der Drink, wenn noch ein wenig Lime Juice (Limettensaft) dazu gegeben wird. \r\nAm besten schmeckt Caipirinha, wenn Du ihn vor dem Trinken mit dem Strohhalm oder einem langen LÃ¶ffel nochmals durchmixt. Und: UnterschÃ¤tze seine Wirkung nicht! Der Alkoholgehalt von CachaÃ§a liegt je nach Sorte zwischen 38 und 48 Prozent. ', 'images/cocktails/Caipirinha.jpg'),
 (2, 'Hugo', 'Alles nach der Reihe in ein Glas fÃ¼llen. \r\nFÃ¼r die 2. Variante (Virgin Hugo) den Sekt durch Sprite ersetzen, den kÃ¶nnen dann auch Kinder trinken. \r\nWer will, kann auch noch EiswÃ¼rfel dazugeben.', '', 'images/cocktails/hugo.jpg'),
 (3, 'Sex on the Beach', 'Zutaten mit Eis shaken und in das vorgekühlte Gästeglas abseihen. Dekoration am Glasrand.', '', 'images/cocktails/sotb.jpg'),
-(4, 'Strawberry Flames', 'Je nach Geschmack die Menge von Zitronensaft & Grenadine anpassen.\r\nJe nach Größe des Glases Crushed Ice oder normale Eiswürfel verwenden.\r\nAls Abrundung der Dekoration den Rand des Glases anfeuchten und einzuckern.', '', 'images/cocktails/sf.jpg'),
-(5, '21st Century', 'Alles in ein Longdrinkglas geben und mit einer Prise braunen Zucker verfeinern. Anschließend Crushed Ice zugeben.Nach Belieben Glasrand anfeuchten und mit braunem Zucker einzuckern.', '', 'images/cocktails/21.jpg'),
+(4, 'Strawberry Flames', 'Je nach Geschmack die Menge von Zitronensaft & Grenadine anpassen.\r\nJe nach GrÃ¶ÃŸe des Glases Crushed Ice oder normale EiswÃ¼rfel verwenden.\r\nAls Abrundung der Dekoration den Rand des Glases anfeuchten und einzuckern.', '', 'images/cocktails/sf.jpg'),
 (6, 'Mojito', 'Minze, Limettensaft und Zucker in ein Glas geben und mit Stößel leicht andrücken. Glas mit Eiswürfeln auffüllen und Rum zugeben. Das Ganze gut verrühren und mit Soda auffüllen.', '', 'images/cocktails/mojito.jpg'),
 (7, 'Cinderella', 'Alle Zutaten, außer Grenadine \r\nmit Eis im Mixer mischen. Anschließend in ein Glas geben und zum Abschluß die Grenadine darüber geben.', '', 'images/cocktails/cinderella.jpg'),
 (8, 'Bloody Mary', 'Alle Zutaten in einem Glas verrÃ¼hren und die Zitronenscheibe auflegen.', '', 'images/cocktails/bm.jpg');
@@ -59,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `cocktail_zutat` (
   `Cocktail_ID` int(11) NOT NULL,
   `Zutat_ID` int(11) NOT NULL,
   `Menge` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `cocktail_zutat`
@@ -79,12 +78,6 @@ INSERT INTO `cocktail_zutat` (`ID`, `Cocktail_ID`, `Zutat_ID`, `Menge`) VALUES
 (33, 3, 16, '4 cl'),
 (34, 3, 17, '4 cl'),
 (35, 3, 18, '1 Scheibe'),
-(36, 4, 2, '5 cl'),
-(37, 4, 19, '6 cl'),
-(38, 4, 20, '4 cl'),
-(39, 4, 21, '2 cl'),
-(40, 4, 1, '2 cl'),
-(41, 4, 22, '1 cl'),
 (42, 5, 23, '8 cl'),
 (43, 5, 16, '6 cl'),
 (44, 5, 24, '3 cl'),
@@ -100,7 +93,13 @@ INSERT INTO `cocktail_zutat` (`ID`, `Cocktail_ID`, `Zutat_ID`, `Menge`) VALUES
 (54, 7, 28, '10 ml'),
 (55, 7, 29, '2 cl'),
 (56, 7, 30, '2 cl'),
-(57, 7, 22, '2 cl');
+(57, 7, 22, '2 cl'),
+(58, 4, 19, '6 cl'),
+(59, 4, 21, '2 cl'),
+(60, 4, 22, '1 cl'),
+(61, 4, 20, '4 cl'),
+(62, 4, 2, '5 cl'),
+(63, 4, 1, '2 cl');
 
 -- --------------------------------------------------------
 
@@ -114,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `nutzer` (
   `Passwort` text NOT NULL,
   `Email` varchar(255) NOT NULL,
   `role` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `nutzer`
@@ -122,8 +121,7 @@ CREATE TABLE IF NOT EXISTS `nutzer` (
 
 INSERT INTO `nutzer` (`ID`, `Login`, `Passwort`, `Email`, `role`) VALUES
 (1, 'Jessica', 'jessica', 'lena-ulrich@web.de', ''),
-(2, 'test', 'ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff', 'test@reu-network.de', ''),
-(3, 'admin', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 'admin@drinkbar.de', 'admin');
+(4, 'admin', 'POBRUm/eDHMr.', 'admin@drinkbar.de', 'admin');
 
 -- --------------------------------------------------------
 
@@ -270,12 +268,12 @@ ALTER TABLE `cocktail`
 -- AUTO_INCREMENT für Tabelle `cocktail_zutat`
 --
 ALTER TABLE `cocktail_zutat`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT für Tabelle `nutzer`
 --
 ALTER TABLE `nutzer`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT für Tabelle `nutzer_cocktail`
 --
