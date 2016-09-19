@@ -20,7 +20,6 @@ if(isset($_REQUEST['submit']))
 		$password2 = mysql_real_escape_string($_REQUEST['password2']);
 		$email = mysql_real_escape_string($_REQUEST['email']);
 		
-		
 		// check if username already in use
 		$db = new Db();
 		$dbUser = $db->select("SELECT * FROM nutzer WHERE Login = '$username'");
