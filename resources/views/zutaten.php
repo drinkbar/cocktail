@@ -2,6 +2,7 @@
 
 <div class="row">
 	<hr>
+	<h5>Zutaten</h5>
 	<div class="small-12 large-4 columns">
 
 		<div class="container">
