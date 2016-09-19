@@ -12,6 +12,11 @@ $zutaten = $db->select("SELECT z.*, cz.Menge
 						 JOIN zutat z ON (z.ID = cz.Zutat_ID) 
 						WHERE c.ID = $id");
 
+if(isset($userId))
+{
+	$result = $db->select("SELECT * FROM nutzer_cocktail WHERE Cocktail_ID = $id AND Nutzer_ID = $userId");
+	$isFav = empty($result) ? false : true;
+}
 if(!empty($cocktail))
 {
 	$name = $cocktail[0]['Cocktailname'];
@@ -41,7 +46,10 @@ else
 		}
 		if(isset($_SESSION['user']))
 		{
-			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\"><i class=\"founicon-star\"></i></a>";
+			if($isFav)
+				echo "<a href=\"favoriten.php?remove=$id\" class=\"button warning\">aus Favoriten entfernen</a>";
+			else
+				echo "<a href=\"favoriten.php?add=$id\" class=\"button warning\">zu Favoriten hinzuzufügen</a>";
 		}
 		?>
 	</div>

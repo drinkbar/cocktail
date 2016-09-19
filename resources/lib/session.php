@@ -8,6 +8,7 @@ if(!isset($variables))
 if(isset($_SESSION['user']))
 {
 	$variables['username'] = $_SESSION['user']['Login'];
+	$variables['userId'] = $_SESSION['user']['ID'];
 }
 
 // check error

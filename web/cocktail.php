@@ -6,6 +6,8 @@
   * RENDER LAYOUT
   */
 
+ $db = new Db();
+
  // default view --> list
  $view = "cocktail/list.php";
  $variables = array();
@@ -21,14 +23,9 @@
  	$view = "cocktail/edit.php";
  	$variables = array( 'id' => $_REQUEST['edit']);
  }
- elseif(isset($_REQUEST['ranking']))
- {
- 	$view = "cocktail/ranking.php";
- }
  elseif(isset($_REQUEST['delete']))
  {
  	$id = $_REQUEST['delete'];
- 	$db = new Db();
  	$query = $db->query("DELETE FROM cocktail WHERE ID = $id");
  	if($query)
  	{

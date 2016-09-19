@@ -15,8 +15,7 @@
 @font-face { font-family: "Hero";
 			 font-weight: bold;
 			 src: url("../fonts/Hero.otf"); }
-			
-			
+
 * {
 	font-family: "Hero", Helvetica, Verdana, sans-serif;
 	-webkit-hyphens: auto; 
