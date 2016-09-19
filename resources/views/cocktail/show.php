@@ -35,6 +35,7 @@ else
 		if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') 
 		{
 			echo "<div class=\"small-12 columns\">";
+			echo "<a href=\"cocktail.php?delete=$id\" class=\"button alert round\">Löschen</a>";
 			echo "<a href=\"cocktail.php?edit=$id\" class=\"button success round\">Bearbeiten</a>";
 			echo "</div>";
 		}
