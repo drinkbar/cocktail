@@ -10,8 +10,8 @@ if(isset($_REQUEST['login_check']))
 		// escape form values
 		$_username = mysql_real_escape_string($_REQUEST['username']);
 		$_password = mysql_real_escape_string($_REQUEST['password']);
-		$_password = hash("sha512", $_password);
-	
+		$_password = crypt($_password, "PO");
+		
 		$database = new Db();
 		$user = $database->select("SELECT * FROM nutzer WHERE Login = '$_username' AND Passwort = '$_password' LIMIT 1");
 	
