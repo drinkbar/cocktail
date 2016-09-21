@@ -17,27 +17,29 @@
     
     
     <div class="row">
-    	<div class="small-12 columns">
     		<?php
     		if (isset($result))
-    		{    			
+    		{    	
+    			echo "<div class=\"small-12 columns\">";
 	    		echo "<h3>Suchergebnis</h3>";
+	    		echo "</div>";
 	    		
 	    		if(empty($result))
 	    		{
-	    			echo "<p>Es wurde kein Ergebnis gefunden.";
+	    			echo "<div class=\"small-12 columns\">";
+	    			echo "<p><strong>Es wurde kein Ergebnis gefunden.</strong></p>";
+	    			echo "</div>";
 	    		}
 	    		else
 	    		{
-		    		echo "<ul>"; 
+	    			echo "<div class=\"small-12 columns\">";
 		    		foreach ($result as $cocktail)
 		    		{
-		    			echo "<li>".$cocktail['Cocktailname']."</li>";
-		    		}
-		    		echo "</ul>";	    			
+		    			include VIEW_PATH .'/cocktail/cocktail_widget.php';
+		    		}	    			
+		    		echo "</div>";
 	    		}
     		}
     		?>
-    	</div>
     </div>
 </main>
