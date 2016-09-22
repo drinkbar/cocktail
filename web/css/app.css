@@ -579,3 +579,25 @@ input[type=radio]{
 .menu a.button{
 	margin-bottom: 1rem;
 }
+
+form.filter{
+	background-color: #660033;
+	color: #FFF;
+	padding: 8px 30px;
+	
+}
+
+form.filter label
+{
+	color: #FFF;
+    font-size: 1rem;
+}
+
+form.filter input{
+	margin: 0;
+}
+
+form.filter input[type="submit"]
+{
+	float:left;
+}
