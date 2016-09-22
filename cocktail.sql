@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 22. Sep 2016 um 08:36
+-- Erstellungszeit: 22. Sep 2016 um 15:13
 -- Server-Version: 5.6.25
 -- PHP-Version: 5.6.11
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `cocktail` (
 
 INSERT INTO `cocktail` (`ID`, `Cocktailname`, `Rezept`, `Bemerkung`, `Bild`) VALUES
 (1, 'Caipirinha', '1. Schneide die Limette von beiden Seiten an und teile sie in drei Teile.\r\n2. Gebe die LimettenstÃ¼cke in ein Glas.\r\n3. FÃ¼ge den braunen Zucker hinzu.\r\n4. ZerstoÃŸe die Limette zusammen mit dem braunen Zucker.\r\n5. AnschlieÃŸend CachaÃ§a hinzugeben.\r\n6. Gebe das gecrushte Eis hinzu.\r\n7. VerrÃ¼hre den Glasinhalt gut.', 'Wer im Cocktail mixen noch keine groÃŸen Erfahrungen hat, fÃ¼r den ist Caipirinha ein perfekter Drink. Denn der Caipi gelingt mÃ¼helos, da er nur aus vier Zutaten besteht: Limetten, braunem Rohrzucker, zerstoÃŸenem Eis und CachaÃ§a. \r\nLetztere ist eine brasilianische Spirituose aus vergorenem und anschlieÃŸend gebranntem Zuckerrohrsaft. In Brasilien wird Ã¼brigens feiner, weiÃŸer Rohrzucker statt, wie in Deutschland oft Ã¼blich, brauner Rohrzucker zugefÃ¼gt. \r\n\r\nDamit der Drink nicht bitter wird, entferne die weiÃŸe Haut groÃŸzÃ¼gig von den Limetten. SÃ¤uerlicher wird der Drink, wenn noch ein wenig Lime Juice (Limettensaft) dazu gegeben wird. \r\nAm besten schmeckt Caipirinha, wenn Du ihn vor dem Trinken mit dem Strohhalm oder einem langen LÃ¶ffel nochmals durchmixt. Und: UnterschÃ¤tze seine Wirkung nicht! Der Alkoholgehalt von CachaÃ§a liegt je nach Sorte zwischen 38 und 48 Prozent. ', 'images/cocktails/Caipirinha.jpg'),
-(2, 'Hugo', 'Alles nach der Reihe in ein Glas fÃ¼llen. \r\nFÃ¼r die 2. Variante (Virgin Hugo) den Sekt durch Sprite ersetzen, den kÃ¶nnen dann auch Kinder trinken. \r\nWer will, kann auch noch EiswÃ¼rfel dazugeben.', '', 'images/cocktails/hugo.jpg'),
+(2, 'Hugo', 'Alles nach der Reihe in ein Glas fÃ¼llen. \nFÃ¼r die 2. Variante (Virgin Hugo) den Sekt durch Sprite ersetzen, den kÃ¶nnen dann auch Kinder trinken. \nWer will, kann auch noch EiswÃ¼rfel dazugeben.', '', 'images/cocktails/hugo.jpg'),
 (3, 'Sex on the Beach', 'Zutaten mit Eis shaken und in das vorgekÃ¼hlte GÃ¤steglas abseihen. Dekoration am Glasrand.', '', 'images/cocktails/sotb.jpg'),
 (4, 'Strawberry Flames', 'Je nach Geschmack die Menge von Zitronensaft & Grenadine anpassen.\r\nJe nach GrÃ¶ÃŸe des Glases Crushed Ice oder normale EiswÃ¼rfel verwenden.\r\nAls Abrundung der Dekoration den Rand des Glases anfeuchten und einzuckern.', '', 'images/cocktails/sf.jpg'),
 (6, 'Mojito', 'Minze, Limettensaft und Zucker in ein Glas geben und mit StÃ¶ÃŸel leicht andrÃ¼cken. Glas mit EiswÃ¼rfeln auffÃ¼llen und Rum zugeben. Das Ganze gut verrÃ¼hren und mit Soda auffÃ¼llen.', '', 'images/cocktails/mojito.jpg'),
@@ -69,7 +69,7 @@ INSERT INTO `cocktail_zutat` (`ID`, `Cocktail_ID`, `Zutat_ID`, `Menge`, `Einheit
 (43, 5, 16, '6', 'cl'),
 (44, 5, 24, '3', 'cl'),
 (45, 5, 25, '3 ', 'cl'),
-(46, 5, 11, 'Prise', 'Prise'),
+(46, 5, 11, '1', 'Prise'),
 (47, 5, 3, '1', 'Scheibe'),
 (64, 1, 11, '2', 'TL'),
 (65, 1, 9, '6', 'cl'),
@@ -151,7 +151,26 @@ CREATE TABLE IF NOT EXISTS `nutzer_zutat` (
   `ID` int(11) NOT NULL,
   `Nutzer_ID` int(11) NOT NULL,
   `Zutat_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `nutzer_zutat`
+--
+
+INSERT INTO `nutzer_zutat` (`ID`, `Nutzer_ID`, `Zutat_ID`) VALUES
+(186, 4, 25),
+(187, 4, 11),
+(188, 4, 9),
+(189, 4, 8),
+(190, 4, 29),
+(191, 4, 10),
+(192, 4, 20),
+(193, 4, 13),
+(194, 4, 15),
+(195, 4, 14),
+(196, 4, 27),
+(197, 4, 31),
+(198, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -270,7 +289,7 @@ ALTER TABLE `nutzer_cocktail`
 -- AUTO_INCREMENT für Tabelle `nutzer_zutat`
 --
 ALTER TABLE `nutzer_zutat`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=199;
 --
 -- AUTO_INCREMENT für Tabelle `zutat`
 --
