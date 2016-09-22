@@ -8,7 +8,7 @@
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text"><?php echo $username; ?></li>
       <li>
-        <a href="#">Meine Zutaten</a>
+        <a href="profile.php?page=ingredients">Meine Zutaten</a>
       </li>
       <li><a href="favoriten.php">Meine Favoriten</a></li>
       <li><a href="#">Partyplaner</a></li>
