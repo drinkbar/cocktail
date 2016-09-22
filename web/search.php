@@ -24,17 +24,24 @@
  elseif(isset($_REQUEST['ingredients']))
  {
  	$userId = $_SESSION['user']['ID'];
- 	$result = $db->select("SELECT DISTINCT c.*
- 							FROM cocktail c
- 								JOIN cocktail_zutat cz ON (c.ID = cz.Cocktail_ID)
- 								
- 							WHERE cz.Zutat_ID IN(
- 								SELECT nz.Zutat_ID 
- 								FROM nutzer_zutat nz
-	 							WHERE nz.Nutzer_ID = $userId
- 							)
- 							ORDER BY Cocktailname");
- 	$variables['result'] = $result;
+ 	$listCocktail = $db->select("SELECT * FROM cocktail ORDER BY Cocktailname");
+ 	$result = array();
+ 	
+ 	foreach ($listCocktail as $cocktail)
+ 	{
+ 		$cId = $cocktail['ID'];
+ 		// alle Zutaten, die für Cocktail nötig sind
+ 		$cZutaten = $db->select("SELECT cz.Zutat_ID FROM cocktail_zutat cz WHERE cz.Cocktail_ID = $cId");
+ 		// alle Zutaten, die der Nutzer hat
+ 		$uZutaten = $db->select("SELECT cz.Zutat_ID FROM nutzer_zutat nz, cocktail_zutat cz WHERE nz.Zutat_ID = cz.Zutat_ID AND cz.Cocktail_ID = $cId");
+ 		
+ 		if($cZutaten == $uZutaten)
+ 		{
+ 			$result[] = $cocktail;
+ 		}
+ 	}
+ 	
+  	$variables['result'] = $result;
  }
 
  renderLayout($view, $variables);

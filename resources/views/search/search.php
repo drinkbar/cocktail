@@ -13,6 +13,12 @@
 			  </div>
 			</div>
         </form>
+        <?php 
+        if(isset($username))
+        {
+        	echo "<p><a href=\"search.php?ingredients\" class=\"button\">Finde Cocktails anhand meiner Zutaten</a></p>";
+        }
+        ?>
     </div>
     
     

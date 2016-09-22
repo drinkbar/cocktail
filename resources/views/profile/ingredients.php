@@ -64,13 +64,13 @@ if(isset($_REQUEST['submit']))
 	
 	if($result)
 	{
-		$_SESSION['success'] = "Zutatenliste erfolgreich bearbeitet.";
+		header("Location: search.php?ingredients");
 	}
 	else
 	{
 		$_SESSION['error'] = "<strong>Bearbeitung fehlgeschlagen!</strong><br /> ".$error;
+		header("Location: profile.php?page=ingredients");
 	}
-	header("Location: profile.php?page=ingredients");
 }
 ?>
 
@@ -78,7 +78,6 @@ if(isset($_REQUEST['submit']))
     <div class="row">
         <hr />
         <h5>Meine Zutaten</h5>
-        <p><a href="search.php?ingredients" class="button">Finde Cocktails anhand meiner Zutaten</a></p>
     </div>
     
     <div class="row">
@@ -105,7 +104,7 @@ if(isset($_REQUEST['submit']))
 			      </div>
 			</div>
 			<div class="large-12 columns">
-				<input type="submit" name="submit" class="button" value="Speichern" /> 
+				<input type="submit" name="submit" class="button" value="Finde Cocktails anhand meiner Zutaten" /> 
 			</div>
 		</form>
     </div>
