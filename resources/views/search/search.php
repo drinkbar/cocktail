@@ -9,7 +9,7 @@
         	<div class="input-group">
         	  <input type="text" id="search_term" name="term" class="input-group-field" placeholder="Cocktailname eingeben..." />
 			  <div class="input-group-button">
-			    <input type="submit" class="button" value="Suchen">
+			    <input type="submit" class="button secondary" value="Suchen">
 			  </div>
 			</div>
         </form>

@@ -40,7 +40,7 @@ else
 				<label for="all"><input type="radio" name="alk" id="all" value="all" <?php echo $filter == "all" ? "checked" : ""; ?> /> alle</label>
 				<label for="only_alk"><input type="radio" name="alk" id="only_alk" value="alk" <?php echo $filter == "alk" ? "checked" : ""; ?> /> nur alkoholische</label>
 				<label for="only_no_alk"><input type="radio" name="alk" id="only_no_alk" value="noalk" <?php echo $filter == "noalk" ? "checked" : ""; ?>/> nur alkoholfreie</label>
-				<input type="submit" name="submit" value="Filter anwenden" class="button" />
+				<input type="submit" name="submit" value="Filter anwenden" class="button secondary" />
 			</form>
 		</div>
 	</div>
