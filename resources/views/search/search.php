@@ -26,7 +26,8 @@
     		<?php
     		if (isset($result))
     		{    	
-    			echo "<div class=\"small-12 columns\">";
+    			echo "<hr />";
+      			echo "<div class=\"small-12 columns\">";
 	    		echo "<h3>Suchergebnis</h3>";
 	    		echo "</div>";
 	    		

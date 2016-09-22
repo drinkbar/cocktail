@@ -2,7 +2,7 @@
 require_once '../src/Db.php';
 // select random cocktail
 $db = new Db();
-$cocktailList = $db->select("SELECT * FROM cocktail WHERE 1");
+$cocktailList = $db->select("SELECT * FROM cocktail");
 $randCocktail = $cocktailList[array_rand($cocktailList, 1)];
 ?>
 <main>
@@ -47,7 +47,7 @@ $randCocktail = $cocktailList[array_rand($cocktailList, 1)];
 		<div class="large-12 columns">
 			<h4>Wie wäre es mit... ?</h4>
 			<div class="small-12 large-6 columns">
-				<?php echo nl2br($randCocktail['Rezept']); ?>
+				<?php echo nl2br($randCocktail['Rezept']); ?>				
 			</div>
 
 			<div class="small-12 large-6 columns">

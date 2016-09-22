@@ -10,9 +10,9 @@ $db = new Db();
 
 $listZutaten = $db->select("SELECT * FROM zutat ORDER BY Bezeichnung");
 $userZutat = $db->select("SELECT z.* 
-					FROM zutat z
-						JOIN nutzer_zutat nz ON (z.ID = nz.Zutat_ID)
+					FROM zutat z, nutzer_zutat nz
 					WHERE 
+						z.ID = nz.Zutat_ID AND
 						nz.Nutzer_ID = $userId
 			");
 

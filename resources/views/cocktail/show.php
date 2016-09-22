@@ -7,11 +7,12 @@ $cocktail = $db->select("SELECT *
 						WHERE c.ID = $id");
 
 $zutaten = $db->select("SELECT z.*, cz.Menge, cz.Einheit
-						FROM cocktail c 
-						 JOIN cocktail_zutat cz ON (cz.Cocktail_ID = c.ID) 
-						 JOIN zutat z ON (z.ID = cz.Zutat_ID) 
-						WHERE c.ID = $id");
-
+						FROM 
+							cocktail_zutat cz, zutat z
+						WHERE
+							cz.Zutat_ID = z.ID AND
+							cz.Cocktail_ID = $id");
+	
 if(isset($userId))
 {
 	$result = $db->select("SELECT * FROM nutzer_cocktail WHERE Cocktail_ID = $id AND Nutzer_ID = $userId");
