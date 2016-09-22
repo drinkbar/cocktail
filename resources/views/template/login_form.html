@@ -1,18 +1,30 @@
-<form action="security.php?login_check" method="post">
-	<div class="row">
-		<div class="medium-4 columns">
-			<label> <input type="text" name="username" placeholder="Benutzername">
-			</label>
-		</div>
-		<div class="medium-4 columns">
-			<label> <input type="password" name="password" placeholder="Passwort">
-			</label>
-		</div>
-		<div class="medium-1 columns">
-            <input type="submit" name="submit" class="button" value="Login">
-        </div>
-        <div class="medium-3 columns align-middle">
-            <a href="registration.php" class="button small secondary">Mitglied werden</a>
-        </div>
-	</div>
-</form>
+<div class="title-bar" data-responsive-toggle="login-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Benutzernavigation</div>
+</div>
+
+<div class="top-bar" id="login-menu">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="has-form">
+				<form action="security.php?login_check" method="post">
+                <div class="row collapse">
+                    <div class="large-5 columns">
+						<input type="text" name="username" placeholder="Benutzername">
+                    </div>
+                    <div class="large-5 columns">
+						<input type="password" name="password" placeholder="Passwort">   
+                    </div>
+                    <div class="large-2 columns">
+						<input type="submit" name="submit" class="button secondary" value="Login">
+					</div>
+                </div>
+				</form>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="top-bar-right">
+	    <a href="registration.php" class="button secondary">Mitglied werden</a>
+    </div>
+</div>
