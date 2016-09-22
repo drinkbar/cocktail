@@ -560,8 +560,13 @@ input[type=radio]{
     width: 25%;
 }
 
+.checkbox-grid .input-group input[type="text"]{
+	width: 50%;
+	float:left;
+}
+
 .checkbox-grid .input-group-label{
-	width: 70%;
+	width: 55%;
 	text-align: left;
 }
 

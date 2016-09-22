@@ -6,7 +6,7 @@ $cocktail = $db->select("SELECT *
 						FROM cocktail c 
 						WHERE c.ID = $id");
 
-$zutaten = $db->select("SELECT z.*, cz.Menge
+$zutaten = $db->select("SELECT z.*, cz.Menge, cz.Einheit
 						FROM cocktail c 
 						 JOIN cocktail_zutat cz ON (cz.Cocktail_ID = c.ID) 
 						 JOIN zutat z ON (z.ID = cz.Zutat_ID) 
@@ -64,7 +64,9 @@ else
 				foreach ($zutaten as $zutat)
 				{
 					echo "<li>";
-					echo $zutat['Menge']." ".$zutat['Bezeichnung'];
+					echo $zutat['Menge']." ";
+					echo empty($zutat['Einheit']) ? "" : $zutat['Einheit']." ";
+					echo $zutat['Bezeichnung'];
 					echo "</li>";
 				}?>
 			</ul>		

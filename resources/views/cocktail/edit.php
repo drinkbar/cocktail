@@ -17,9 +17,8 @@ if(isset($_REQUEST['submit']))
 	$picture = mysql_real_escape_string($_REQUEST['picture']);
 	$ingredients = $_REQUEST['ingredients'];
 	$amounts = $_REQUEST['amount'];
+	$units = $_REQUEST['unit'];
 	
-	var_dump($ingredients);
-	var_dump($amounts);
 	// start SQL TRANSACTION
 	try 
 	{
@@ -42,9 +41,12 @@ if(isset($_REQUEST['submit']))
 		// INSERT new cocktail_zutat enties
 		foreach ($ingredients as $ingredientId)
 		{
-			if(array_key_exists($ingredientId, $amounts))
+			if(array_key_exists($ingredientId, $amounts) && array_key_exists($ingredientId, $units))
 			{	
-				$insert = $db->query("INSERT INTO cocktail_zutat (Cocktail_ID, Zutat_ID, Menge) VALUES ($id,$ingredientId,'".$amounts[$ingredientId]."')");
+				$amount = mysql_real_escape_string($amounts[$ingredientId]);
+				$unit = mysql_real_escape_string($units[$ingredientId]);
+				
+				$insert = $db->query("INSERT INTO cocktail_zutat (Cocktail_ID, Zutat_ID, Menge, Einheit) VALUES ($id,$ingredientId,'$amount','$unit')");
 				if($insert === false)
 				{
 					throw new Exception($db->error());
@@ -87,7 +89,7 @@ if(empty($cocktail))
 	header("Location: cocktail.php");	
 }
 // SELECT cocktail zutaten by id
-$zutaten = $db->select("SELECT z.*, cz.Menge
+$zutaten = $db->select("SELECT z.*, cz.Menge, cz.Einheit
 						FROM cocktail c 
 						 JOIN cocktail_zutat cz ON (cz.Cocktail_ID = c.ID) 
 						 JOIN zutat z ON (z.ID = cz.Zutat_ID) 
@@ -154,13 +156,15 @@ $image = $cocktail[0]['Bild'];
 				      	$zId = $zutat['ID'];
 				      	$checked = in_array($zId, array_keys($cocktailZutaten));
 				      	$amount = $checked ? $cocktailZutaten[$zId]['Menge'] : "";
+				      	$unit = $checked ? $cocktailZutaten[$zId]['Einheit'] : "";
 				      	
-				      	echo "<div class=\"small-4 columns\">";
+				      	echo "<div class=\"large-4 small-12 columns\">";
 				      	echo "<div class=\"input-group\">";
 	        			echo "<span class=\"input-group-label\">";
 				      	echo "<input id=\"chkbox_$zId\" type=\"checkbox\" name=\"ingredients[]\" value=\"$zId\"".($checked ? "checked=\"checked\"" : "")."><label for=\"chkbox_$zId\">$zName</label>";
-	        			echo "</span>
-	        				    <input type=\"text\" placeholder=\"Menge\" name=\"amount[$zId]\" class=\"input-group-field\" value=\"$amount\" \>
+				      	echo "</span>
+						      	<input type=\"text\" placeholder=\"Menge\" name=\"amount[$zId]\" class=\"input-group-field\" value=\"$amount\" \>
+	        				    <input type=\"text\" placeholder=\"Einheit\" name=\"unit[$zId]\" class=\"input-group-field\" value=\"$unit\" \>
 	      					  </div>";
 				      	echo "</div>";
 				      }
