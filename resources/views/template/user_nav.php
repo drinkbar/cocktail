@@ -11,7 +11,7 @@
         <a href="profile.php?page=ingredients">Meine Zutaten</a>
       </li>
       <li><a href="favoriten.php">Meine Favoriten</a></li>
-      <li><a href="#">Partyplaner</a></li>
+      <li><a href="profile.php?page=shopping">Partyplaner</a></li>
     </ul>
   </div>
   <div class="top-bar-right">

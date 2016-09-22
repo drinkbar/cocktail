@@ -17,6 +17,10 @@
  		$view = "profile/ingredients.php";
  		$variables = array();
  		break;
+ 	case 'shopping':
+ 		$view = "profile/shopping.php";
+ 		$variables = array();
+ 		break;
  	default:
  		// redirect
 		header('Location: index.php');
