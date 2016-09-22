@@ -12,9 +12,11 @@
  $view = "favoriten/list.php";
  $variables = array();
  
+ // handle session parameter 
+ require_once(LIBRARY_PATH . '/session.php');
+
  if(isset($_REQUEST['add']))
  {
- 	session_start();
  	$cocktailId = $_REQUEST['add'];
  	$userId = $_SESSION['user']['ID'];
  	$result = $db->query("INSERT INTO nutzer_cocktail (Cocktail_ID, Nutzer_ID) VALUES ($cocktailId, $userId)");
@@ -23,7 +25,6 @@
  }
  elseif(isset($_REQUEST['remove']))
  {
- 	session_start();
  	$cocktailId = $_REQUEST['remove'];
  	$userId = $_SESSION['user']['ID'];
  	$result = $db->query("DELETE FROM nutzer_cocktail WHERE Cocktail_ID = $cocktailId AND Nutzer_ID = $userId");
@@ -31,8 +32,6 @@
  	header("Location: cocktail.php?show=$cocktailId");
  }
 
- // handle session parameter 
- require_once(LIBRARY_PATH . '/session.php');
 
  renderLayout($view, $variables);
 ?>

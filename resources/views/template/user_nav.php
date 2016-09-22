@@ -16,6 +16,7 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu">
+      <li class="align-right">Heute ist der <?php echo date("d.m.Y"); ?> </li>
       <li><a href="security.php?logout" class="button secondary">Logout</a></li>
     </ul>
   </div>

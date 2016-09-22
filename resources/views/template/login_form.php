@@ -21,6 +21,7 @@
                 </div>
 				</form>
             </li>
+            <li class="align-right">Heute ist der <?php echo date("d.m.Y"); ?></li>
         </ul>
     </div>
     

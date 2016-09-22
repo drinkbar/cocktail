@@ -2,7 +2,7 @@
 if (!isset($_SESSION['user']))
 {
 	$_SESSION['error'] = "<strong>Zugriff verweigert!</strong> Sie sind nicht berechtigt, diese Seite aufzurufen.";
-	header("Location: cocktail.php");
+	header("Location: index.php");
 }
 require_once '../src/Db.php';
 
@@ -95,7 +95,7 @@ if(isset($_REQUEST['submit']))
 					      	
 					      	echo "<div class=\"large-4 small-12 columns\">";
 					      	echo "<div class=\"input-group\">";
-		        			echo "<span class=\"input-group-label\">";
+		        			echo "<span class=\"input-group-label\">";	
 					      	echo "<input id=\"chkbox_$zId\" type=\"checkbox\" name=\"ingredients[]\" value=\"$zId\"".($checked ? "checked=\"checked\"" : "")."><label for=\"chkbox_$zId\">$zName</label>";
 					      	echo "</span>";
 					      	echo "</div>";

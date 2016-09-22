@@ -6,6 +6,7 @@
   * RENDER LAYOUT
   */
  $page = null;
+ $variables = array();
  if(isset($_REQUEST['page']))
  {
  	$page = $_REQUEST['page'];
@@ -15,19 +16,15 @@
  {
  	case 'zutaten':
  		$view = "zutaten.php";
- 		$variables = array();
  		break;
  	case 'useragreement':
  		$view = "useragreement.php";
- 		$variables = array();
  		break;
  	case 'imprint':
  		$view = "imprint.php";
- 		$variables = array();
  		break;
  	default:
 		 $view = "home.php";
-		 $variables = array();
  }
  
  // handle session parameter

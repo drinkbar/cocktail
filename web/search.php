@@ -17,7 +17,7 @@
 
  if(isset($_REQUEST['term']))
  {
- 	$term = $_REQUEST['term'];
+ 	$term = trim($_REQUEST['term']);
  	$result = $db->select("SELECT * FROM cocktail WHERE Cocktailname LIKE '%$term%' ORDER BY Cocktailname");
  	$variables['result'] = $result;
  }

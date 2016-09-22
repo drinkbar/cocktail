@@ -558,6 +558,7 @@ input[type=radio]{
 .top-bar .button{
 	max-width: auto;
 	margin-bottom: 0px;
+	margin-left: 10px;
 }
 
 .checkbox-grid li {

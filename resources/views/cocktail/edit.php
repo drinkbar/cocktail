@@ -160,12 +160,12 @@ $image = $cocktail[0]['Bild'];
 				      	
 				      	echo "<div class=\"large-4 small-12 columns\">";
 				      	echo "<div class=\"input-group\">";
-	        			echo "<span class=\"input-group-label\">";
+				      	echo "<span class=\"input-group-label\">";
 				      	echo "<input id=\"chkbox_$zId\" type=\"checkbox\" name=\"ingredients[]\" value=\"$zId\"".($checked ? "checked=\"checked\"" : "")."><label for=\"chkbox_$zId\">$zName</label>";
 				      	echo "</span>
-						      	<input type=\"text\" placeholder=\"Menge\" name=\"amount[$zId]\" class=\"input-group-field\" value=\"$amount\" \>
-	        				    <input type=\"text\" placeholder=\"Einheit\" name=\"unit[$zId]\" class=\"input-group-field\" value=\"$unit\" \>
-	      					  </div>";
+				      	<input type=\"text\" placeholder=\"Menge\" name=\"amount[$zId]\" class=\"input-group-field\" value=\"$amount\" \>
+				      	<input type=\"text\" placeholder=\"Einheit\" name=\"unit[$zId]\" class=\"input-group-field\" value=\"$unit\" \>
+				      	</div>";
 				      	echo "</div>";
 				      }
 				      ?>

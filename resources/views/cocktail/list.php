@@ -6,11 +6,11 @@ $filter = "all";
 
 if(isset($_REQUEST['submit']))
 {
-	$subSql = "SELECT c.ID
-			FROM cocktail c
-				JOIN cocktail_zutat cz ON (c.ID = cz.Cocktail_ID)
+	$subSql = "SELECT cz.Cocktail_ID
+			FROM cocktail_zutat cz
 				JOIN zutat z ON (z.ID = cz.Zutat_ID)
-			WHERE z.Alk = 1";		
+			WHERE z.Alk = 1";	
+	
 
 	$filter = $_REQUEST['alk'];
 	if($filter == "alk")
@@ -49,9 +49,6 @@ else
 			foreach ($list as $cocktail)
 			{
 				include 'cocktail_widget.php';
-				//echo "<li>";
-				//echo "<a href=\"cocktail.php?show=".$cocktail['ID']."\">".$cocktail['Cocktailname']."</a>";
-				//echo "</li>";
 			}
 			?>
 	</div>

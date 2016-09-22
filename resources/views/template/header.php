@@ -7,7 +7,6 @@
   <title>drinkbar.de</title>
   
   <link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="css/foundation-icons.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
 
@@ -22,7 +21,7 @@
 					include TEMPLATE_PATH . "/user_nav.php";
 				}
 				else 
-					include TEMPLATE_PATH . "/login_form.html";
+					include TEMPLATE_PATH . "/login_form.php";
 				
 				if(isset($error))
 				{
