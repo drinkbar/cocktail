@@ -12,6 +12,9 @@ date_default_timezone_set('Europe/Berlin');
  */
  defined("LIBRARY_PATH")
     or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/../lib'));
+
+ defined("SOURCE_PATH")
+ 	or define("SOURCE_PATH", realpath(dirname(__FILE__) . '/../src'));
  
  defined("VIEW_PATH")
     or define("VIEW_PATH", realpath(dirname(__FILE__) . '/../views'));
