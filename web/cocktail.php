@@ -7,10 +7,6 @@
   */
 
  $db = new Db();
-
- // default view --> list
- $view = "cocktail/list.php";
- $variables = array();
  
  // show
  if(isset($_REQUEST['show']))
@@ -38,6 +34,11 @@
  		$view = "cocktail/show.php";
  		$variables = array( 'id' => $_REQUEST['show']);
  	}	
+ }
+ // SHOW
+ else 
+ {
+	 $view = "cocktail/list.php"; 	
  }
 
  // handle session parameter 
